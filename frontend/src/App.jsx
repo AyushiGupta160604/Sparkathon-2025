@@ -124,7 +124,7 @@ function App() {
               <div key={sug._id} className="product-card">
                 <img src={sug.image} alt={sug.title} />
                 <h4>{sug.title}</h4>
-                <p>₹{sug.price}</p>
+                <p>${sug.price}</p>
                 <p>Stock: {sug.quantity}</p>
                 <button onClick={() => handleOrderClick(sug)}>Order</button>
               </div>
