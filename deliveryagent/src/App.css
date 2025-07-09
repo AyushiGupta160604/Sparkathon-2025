@@ -1,0 +1,131 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  //background-color: #f3e5ab;
+  background: rgb(193, 169, 140);
+  color: #3e2723;
+}
+
+.deliveries-page {
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+.deliveries-heading {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  color: #3e2723;
+  font-weight: 600;
+}
+
+.empty-message {
+  text-align: center;
+  font-style: italic;
+  color: #5c4033;
+}
+
+.deliveries-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.delivery-card {
+  background-color: #fff8dc;
+  border: 1px solid #e0c48d;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(62, 39, 35, 0.1);
+  padding: 1.5rem;
+  width: 320px;
+  transition: transform 0.2s ease;
+}
+
+.delivery-card:hover {
+  transform: translateY(-4px);
+}
+
+.product-title {
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+  color: #4e342e;
+}
+
+.route-button {
+  margin-top: 1rem;
+  background-color: #8d6e63;
+  color: #fff8dc;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background-color 0.3s ease;
+}
+
+.route-button:hover {
+  background-color: #5d4037;
+}
+
+.route-container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+.map-section {
+  flex: 2;
+}
+
+.map-box {
+  height: 100%;
+  width: 100%;
+}
+
+.instruction-panel {
+  width: 350px;
+  padding: 1.5rem;
+  background-color: #f3e5ab;
+  overflow-y: auto;
+  border-left: 2px solid #d7ccc8;
+}
+
+.instruction-panel h2 {
+  color: #3e2723;
+  margin-bottom: 1rem;
+}
+
+.instruction-list {
+  list-style: decimal inside;
+  text-align: left;
+  color: #4e342e;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  padding-left: 0;
+}
+
+.next-instruction-btn {
+  margin-top: 1.2rem;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.next-instruction-btn:disabled {
+  background-color: #a5d6a7;
+  cursor: not-allowed;
+}
