@@ -13,11 +13,11 @@ mongoose.connect(process.env.MONGO_URI, {
 
 // 5 fake Walmart stores
 const stores = [
-  { name: "Walmart Delhi", address: "123 Mall Road, Delhi", pincode: "110001", latitude: 28.6139, longitude: 77.2090 },
-  { name: "Walmart Mumbai", address: "Linking Road, Mumbai", pincode: "400050", latitude: 19.0760, longitude: 72.8777 },
-  { name: "Walmart Bangalore", address: "MG Road, Bangalore", pincode: "560001", latitude: 12.9716, longitude: 77.5946 },
-  { name: "Walmart Hyderabad", address: "Banjara Hills, Hyderabad", pincode: "500034", latitude: 17.3850, longitude: 78.4867 },
-  { name: "Walmart Kolkata", address: "Park Street, Kolkata", pincode: "700016", latitude: 22.5726, longitude: 88.3639 }
+  { name: "Walmart Delhi", city: "Delhi", address: "123 Mall Road, Delhi", pincode: "110001", latitude: 28.6139, longitude: 77.2090 },
+  { name: "Walmart Mumbai", city: "Mumbai", address: "Linking Road, Mumbai", pincode: "400050", latitude: 19.0760, longitude: 72.8777 },
+  { name: "Walmart Bangalore", city: "Bangalore", address: "MG Road, Bangalore", pincode: "560001", latitude: 12.9716, longitude: 77.5946 },
+  { name: "Walmart Hyderabad", city: "Hyderabad", address: "Banjara Hills, Hyderabad", pincode: "500034", latitude: 17.3850, longitude: 78.4867 },
+  { name: "Walmart Kolkata", city: "Kolkata", address: "Park Street, Kolkata", pincode: "700016", latitude: 22.5726, longitude: 88.3639 }
 ];
 
 async function seedData() {

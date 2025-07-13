@@ -22,6 +22,8 @@ app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 const productRoutes = require("./routes/products");
 const orderRoutes = require("./routes/orders");
+const analyticsRoutes = require("./routes/analytics");
 
 app.use("/products", productRoutes);
 app.use("/order", orderRoutes);
+app.use("/analytics", analyticsRoutes);

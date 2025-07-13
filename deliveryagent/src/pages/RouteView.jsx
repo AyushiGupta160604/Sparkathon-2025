@@ -1,10 +1,10 @@
 import { MapContainer, TileLayer, Marker, Polyline, useMap } from "react-leaflet";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 
-// custom icons for better visualization
+// custom icons
 const agentIcon = new L.Icon({
   iconUrl: "https://cdn-icons-png.flaticon.com/512/684/684908.png",
   iconSize: [32, 32],
@@ -30,6 +30,7 @@ function CenterMap({ position }) {
 
 function RouteView() {
   const { orderId } = useParams();
+  const navigate = useNavigate();
   const [routeCoords, setRouteCoords] = useState([]);
   const [steps, setSteps] = useState([]);
   const [agentLocation, setAgentLocation] = useState(null);
@@ -37,6 +38,9 @@ function RouteView() {
   const [storeCoords, setStoreCoords] = useState(null);
   const [currentStepIndex, setCurrentStepIndex] = useState(0);
   const [isSpeaking, setIsSpeaking] = useState(false);
+  const [isDelivered, setIsDelivered] = useState(false);
+  const [statusMessage, setStatusMessage] = useState("");
+
 
   const speakInstruction = (instruction) => {
     if ("speechSynthesis" in window && instruction) {
@@ -47,6 +51,22 @@ function RouteView() {
       speechSynthesis.speak(utterance);
     }
   };
+
+  const markAsDelivered = async () => {
+  try {
+    const ok = await fetch(
+      `http://localhost:5000/order/${orderId}/delivered`,
+      { method: "PATCH" }
+    ).then(r => r.ok);
+
+    if (!ok) throw new Error();
+    alert("✅ Delivered");        // ← immediate feedback
+    localStorage.setItem("refreshDeliveries", "true");
+    navigate("/deliveries");      // ← go back to list
+  } catch {
+    alert("❌ Could not mark delivered");
+  }
+};
 
 
   useEffect(() => {
@@ -173,6 +193,17 @@ function RouteView() {
           >
             🔊 {currentStepIndex < steps.length ? "Next Instruction" : "All Instructions Done"}
           </button>
+        </div>
+
+        <div style={{ marginTop: "1rem" }}>
+          <button
+            onClick={markAsDelivered}
+            disabled={isDelivered}
+            className="deliver-button"
+          >
+            📦 {isDelivered ? "Delivered ✅" : "Mark as Delivered"}
+          </button>
+          {statusMessage && <p style={{ color: "#3e2723", marginTop: "0.5rem" }}>{statusMessage}</p>}
         </div>
       </div>
     </div>

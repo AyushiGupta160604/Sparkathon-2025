@@ -40,6 +40,8 @@ Phase 1 Steps:
 
    name(String)
 
+   city(String)
+
    address(String)
 
    pincode(String)
@@ -107,8 +109,24 @@ Phase 2 Steps:
 API Endpoint:
 
 - GET /order/:orderId
-- GET /: to get all deliveries
+- To get all deliveries: GET /
 - POST /place
 
 3. Delivery Agent Live location
 4. Delivery Instruction text to speech
+5. Mark as Delivered button, UI updation and status change
+   API Endpoint:
+   - Patch /order/:id/delivered
+
+Dynamic Routing(On Hold)
+
+### Phase 3: HeatMap (“AutoZone Restocker”)
+
+#### Aim -> city‑level demand vs stock heat‑map
+
+#### Using: For visualisation: react-leaflet, leaflet.heat, react-chartjs-2, chart.js
+
+New Route: routes/analytics.js
+
+- aggregate products by store's city and sum their demandScore
+- Proper dashboard with heatmap, top products sold bar chart and a pie of major locations order placed

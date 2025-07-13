@@ -72,6 +72,24 @@ function App() {
 
   return (
     <div>
+      <div style={{ display: "flex", justifyContent: "center", marginBottom: "1rem" }}>
+        <button
+          onClick={() => window.open(`${window.location.origin}/heatmap`, "_blank")}
+          style={{
+            padding: "10px 20px",
+            background: "#3e2723",
+            color: "white",
+            border: "none",
+            borderRadius: "5px",
+            cursor: "pointer"
+          }}
+        >
+    🔥    View Demand Heatmap
+        </button>
+         <button className="center-btn" style={{marginLeft:"1rem"}} onClick={()=>window.open("/dashboard","_blank")}>
+          View Dashboard
+        </button>
+      </div>
       <h1 style={{color: "#3e2723"}}>Product Catalog</h1>
       <div className="product-list">
         {products.map(prod => (

@@ -87,4 +87,19 @@ router.get("/:orderId", async (req, res) => {
   }
 });
 
+// Mark as Delivered after delivery placed
+router.patch("/:id/delivered", async (req, res) => {
+  try {
+    const updated = await Order.findByIdAndUpdate(
+      req.params.id,
+      { deliveryStatus: "delivered" },
+      { new: true }
+    );
+    if (!updated) return res.status(404).json({ error: "Order not found" });
+    res.json(updated);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
 module.exports = router;
