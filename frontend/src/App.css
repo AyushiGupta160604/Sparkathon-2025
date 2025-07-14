@@ -1,0 +1,148 @@
+/* App.css */
+body {
+    background-color: #1e3a5f; /* Dark Blue background */
+    color: #f5f5f5; /* Light text color */
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .app {
+    text-align: center;
+    padding: 20px;
+  }
+
+  .header {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: #fdf5e6;
+    border-bottom: 2px solid #3b7d3b;
+  }
+  
+  .logo {
+    width: 120px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  h1 {
+    font-size: 2.8rem;
+    margin-bottom: 40px;
+    color: #f5f5f5;
+    font-weight: bold;
+  }
+  
+  .options {
+    margin-bottom: 50px;
+  }
+  
+  button {
+    background-color: #8b4513;
+    color: #f5f5f5;
+    padding: 15px 40px;
+    margin: 10px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #a0522d;
+    transform: scale(1.05);
+  }
+  
+  .back-button {
+    background-color: #8b4513;
+    margin-top: 20px;
+    padding: 10px 25px;
+  }
+  
+  .image-upload {
+    margin: 30px auto;
+    width: 50%;
+    text-align: center;
+  }
+  
+  .uploaded-image {
+    width: 350px;
+    margin-top: 20px;
+    border: 4px solid #f5f5f5;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .result-display {
+    margin-top: 50px;
+  }
+  
+  .result-display h2 {
+    font-size: 2rem;
+    color: #f5f5f5;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #f5f5f5;
+    display: inline-block;
+  }
+  
+  .result-table {
+    width: 80%;
+    margin: 30px auto;
+    border-collapse: collapse;
+    background-color: #f5f5f5; /* White table */
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .result-table th,
+  .result-table td {
+    padding: 15px;
+    text-align: left;
+    color: #333; /* Dark text for contrast */
+  }
+  
+  .result-table th {
+    background-color: #8b4513; /* Brown header */
+    color: white;
+    font-size: 1.1rem;
+  }
+  
+  .result-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .result-table tr:hover {
+    background-color: #ddd;
+  }
+  
+  input[type="file"] {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #f5f5f5; /* White input */
+    color: #333;
+    border: none;
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  input[type="file"]:hover {
+    background-color: #ddd;
+  }
+  
+  footer {
+    margin-top: 60px;
+    padding: 20px;
+    color: #f5f5f5;
+    font-size: 0.9rem;
+    background-color: #1e3a5f;
+  }  
+  .pass h2 {
+  color: #28a745;
+}
+
+.fail h2 {
+  color: #dc3545;
+}
