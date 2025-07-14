@@ -1,0 +1,12 @@
+flask
+flask-cors
+opencv-python
+ultralytics
+easyocr
+pytesseract
+Pillow
+numpy
+tensorflow
+pymongo
+python-dotenv
+requests
