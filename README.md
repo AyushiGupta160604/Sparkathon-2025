@@ -241,17 +241,23 @@ To run this project locally, follow these steps:
 
 1. *Clone the repository*:
    ```bash
-   git clone https://github.com/Mayank-Bharti/grid-main.git
-   cd grid-main
+   git clone https://github.com/AyushiGupta160604/Sparkathon-2025.git
+   cd ./phase4
    
-2. *Install frontend dependencies*:
-   ```bash                                                                                                                cd frontend
-   npm install
-
-3. *Install backend dependencies*:
+2. *Frontend*:
    ```bash
-   cd ../backend
+   cd frontend                                                                                                              cd frontend
    npm install
+   npm start
+
+3. *Backend*:
+   ```bash
+   cd packing-verification
+   python -m venv yolov8_env
+   source yolov8_env/bin/activate   # On Windows: yolov8_env\Scripts\activate
+   pip install -r requirements.txt
+   python app.py
+   
 
 4. *Access the application*:
     ```bash
