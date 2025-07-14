@@ -236,28 +236,6 @@ SPARKTHON-25/
   - Freshness score
   - Item-type match 
 
-
-
-## Installation
-To run this project locally, follow these steps:
-
-1. *Clone the repository*:
-   ```bash
-   git clone https://github.com/Mayank-Bharti/grid-main.git
-   cd grid-main
-   
-2. *Install frontend dependencies*:
-   ```bash                                                                                                                cd frontend
-   npm install
-
-3. *Install backend dependencies*:
-   ```bash
-   cd ../backend
-   npm install
-
-4. *Access the application*:
-   ### Navigate to `http://localhost:3000`
-
 ---
 
 ## 🧠 Future Roadmap (Beyond Submission)
