@@ -124,7 +124,7 @@ Visualizes inventory-demand mismatch and enables smarter restocking based on zon
 - `GET /analytics/orders-city`
 
 ---
-### ✅ Phase 1 –AI-Based Packing Verification System 
+### ✅ Phase 4 –AI-Based Packing Verification System 
 
 This project is part of a larger supply chain management system, focusing on **error detection in packaging** using computer vision and OCR. The goal is to **automatically verify the type, quantity, expiry, and freshness** of packed items before delivery, reducing manual errors and improving efficiency.
 
