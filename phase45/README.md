@@ -124,8 +124,8 @@ To run this project locally, follow these steps:
 
 1. *Clone the repository*:
    ```bash
-   git clone https://github.com/Mayank-Bharti/sparkthon-25.git
-   cd sparkthon-25
+   https://github.com/AyushiGupta160604/Sparkathon-2025.git
+   cd ./phase45
    
 2. *Frontend*:
    ```bash
