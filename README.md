@@ -129,7 +129,7 @@ Visualizes inventory-demand mismatch and enables smarter restocking based on zon
 This project is part of a larger supply chain management system, focusing on **error detection in packaging** using computer vision and OCR. The goal is to **automatically verify the type, quantity, expiry, and freshness** of packed items before delivery, reducing manual errors and improving efficiency.
 
 
-##  Key Features
+####  Key Features
 
 - Verifies **item quantity** using object detection (YOLOv8)
 - Checks **expiry date** using OCR (Tesseract)
@@ -139,7 +139,7 @@ This project is part of a larger supply chain management system, focusing on **e
 - Stores expected product metadata via label image
 
 
-## Project Structure
+#### Project Structure
 
 ```
 
@@ -167,14 +167,14 @@ SPARKTHON-25/
 
 ```
 
-## Tech Stack
+#### Tech Stack
 
-### Frontend
+##### Frontend
 - React 
 - Axios for API calls
 - CSS for UI styling
 
-### Backend (Flask)
+##### Backend (Flask)
 - Flask + Flask-CORS
 - OpenCV + YOLOv8 for object detection
 - Tesseract OCR for expiry extraction
@@ -183,7 +183,7 @@ SPARKTHON-25/
 - External UPCItemDB API for product type inference
 
 
-## ⚙️ Backend APIs
+#### ⚙️ Backend APIs
 
 - `POST /scan` – Check if product exists in inventory using productId.
 - `POST /scan-label` – Extract product name and expected quantity using OCR from label image.
@@ -191,9 +191,9 @@ SPARKTHON-25/
 - `POST /verify` – Verify uploaded open-box image for quantity, freshness, expiry using AI.
 
 
-## 📦 Sample Schema
+#### 📦 Sample Schema
 
-### Inventory Item
+##### Inventory Item
 
 ```js
 {
@@ -203,21 +203,21 @@ SPARKTHON-25/
 }
 ```
 
-## How It Works
+#### How It Works
 
-### 🔹 Step 0: QR/Barcode Scan 
+##### 🔹 Step 0: QR/Barcode Scan 
 - Scans **QR/Barcode** on product label to get `productId`.
 - Checks if product already exists in inventory.
 - If not found, prompts to upload label for metadata extraction.
 
-### 🔹 Step 1: Label Scan
+##### 🔹 Step 1: Label Scan
 - Uploads **label image** containing product name and quantity.
 - Uses `ocr.py` to extract:
   - `productName`
   - `expectedQuantity`
 - Saves this metadata to MongoDB using `/inventory` API.
 
-### 🔹 Step 2: Packing Verification
+##### 🔹 Step 2: Packing Verification
 - Uploads **open box image** of packed items.
 - System runs:
   - `YOLOv8` → counts objects
@@ -229,12 +229,33 @@ SPARKTHON-25/
   - Freshness ≥ 65 (for perishable items)
   - Matches product type from UPC 
 
-### 🔹 Step 3: Displays Result
+##### 🔹 Step 3: Displays Result
 - Displays `PASS` or `FAIL` with detailed result:
   - Quantity match
   - Expiry status
   - Freshness score
-  - Item-type match 
+  - Item-type match
+ 
+#### Installation
+To run this project locally, follow these steps:
+
+1. *Clone the repository*:
+   ```bash
+   git clone https://github.com/Mayank-Bharti/grid-main.git
+   cd grid-main
+   
+2. *Install frontend dependencies*:
+   ```bash                                                                                                                cd frontend
+   npm install
+
+3. *Install backend dependencies*:
+   ```bash
+   cd ../backend
+   npm install
+
+4. *Access the application*:
+    http://localhost:3000
+    ```
 
 ---
 
