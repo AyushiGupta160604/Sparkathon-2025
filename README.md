@@ -254,8 +254,8 @@ To run this project locally, follow these steps:
    npm install
 
 4. *Access the application*:
+    ```bash
     http://localhost:3000
-    ```
 
 ---
 
